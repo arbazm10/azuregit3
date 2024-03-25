@@ -4,13 +4,13 @@ ENV INSTANA_AUTO_PROFILE true
 
 EXPOSE 8093
 
-WORKDIR /opt/server
+WORKDIR /opt/serverarbaz
 
-COPY package.json /opt/server/
+COPY package.json /opt/serverarbaz/
 
 RUN npm install
 
-COPY server.js /opt/server/
+COPY server.js /opt/serverarbaz/
 
 CMD ["node", "server.js"]
 
