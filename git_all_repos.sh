@@ -42,19 +42,19 @@
 
 #!/bin/bash
 REPOSITORIES="/c/Users/Admin/Desktop/gitpractice/gitpractice"
-cd "$REPOSITORIES" || exit 1  # Exit if the directory doesn't exist or can't be accessed
-#for REPO in "$REPOSITORIES"/*
-#do
- #   if [ -d "$REPO" ]
-  #  then 
-   #     echo "updating $REPO at $(date)"
-    #    if [ -d "$REPO/.git" ]
-     #   then
-            cd "$REPO" || continue  # Move to the repository directory, or skip if unable to access
+cd "$REPOSITORIES" 
+for REPO in "$REPOSITORIES"/*
+do
+   if [ -d "$REPO" ]
+   then 
+        echo "updating $REPO at $(date)"
+        if [ -d "$REPO/.git" ]
+        then
+            cd "$REPO" 
             git add .
             git commit -m "shell"
             git push origin main
-      #      cd ..
-       # fi
-    #fi
-#done
+            cd ..
+        fi
+    fi
+done
